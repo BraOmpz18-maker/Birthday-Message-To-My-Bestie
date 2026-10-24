@@ -76,32 +76,150 @@ footer{
 @keyframes bounce{
     0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); }
 }
+
+
+.letter-section {
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+.envelope {
+    position: relative;
+    width: 280px;
+    height: 180px;
+    margin: 60px auto 25px;
+    background: #ff8fba;
+    border-radius: 8px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #ffb6d0;
+    border-radius: 8px;
+}
+
+.letter {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    padding: 18px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background: #fffafd;
+    border-radius: 8px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform 1s ease, opacity 0.5s;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.letter h3 {
+    color: #e84393;
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: #f45c99;
+    clip-path: polygon(0 0, 100% 0, 50% 65%);
+    transform-origin: top;
+    transition: transform 0.8s ease;
+    z-index: 4;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    background: #ff9fc5;
+    clip-path: polygon(0 100%, 0 0, 50% 55%,
+                       100% 0, 100% 100%);
+    border-radius: 8px;
+    z-index: 3;
+}
+
+.heart-seal {
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    z-index: 5;
+    transition: opacity 0.3s;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.open .letter {
+    opacity: 1;
+    transform: translateY(-125px);
+    height: 280px;
+    z-index: 6;
+}
+
+.envelope.open .heart-seal {
+    opacity: 0;
+}
+
+.envelope.open .envelope-front {
+    z-index: 1;
+}
+
 </style>
 <body>
     <div class="container">
-        <div class="heart">❤ 💞 💖</div>
-        <div class="cake">🎂</div>
-
-        <h1>Happy Birthday Bonolo! 🎉</h1>
-
-    <h2>To My Beautiful Best Friend 🌸</h2>
-
-    <p class="message">Happy Birthday to the most amazing girl! ❤
         
-        I just want you to know to know how grateful I am to have to have you in my life.
+<section class="letter-section">
+    <h2>💌 A Special Letter For You</h2>
+    <p>Someone special has a message for you...</p>
+
+    <div class="envelope" id="envelope"
+         onclick="openLetter()">
+
+        <div class="envelope-back"></div>
+        <div class="letter">
+            <h3>Dear Bonolo💗</h3>
+            <p>
+                Happy birthday to my beautiful bestie!
+                🎉
+            </p>
+            <p>
+                Thank you for being such a special part
+                of my life. You bring happiness, laughter,
+                and beautiful memories into my world.
+            </p>
+            <p>
+                I hope your birthday is filled with love,
+                blessings, success, and everything your
+                heart wishes for.
+            </p>
+            <p>
+                Never forget how amazing you are.
+                I'm always cheering for you!
+            </p>
+            <h3>Love you always!❤ 💞 💖 </h3>
+        </div>
+
+        <div class="envelope-flap"></div>
+        <div class="envelope-front"></div>
+        <div class="heart-seal">💗</div>
+    </div>
+
+    <button onclick="openLetter()" id="openButton">
+        Open Your Letter 💌
+    </button>
+</section>
+
         
-        You are more than a best friend to me. You are someone who makes life  brighter, happier, and more beautiful.
-
-        Thank you for the laughs, the memories, the conversations, and all the moments that make our friendship so special.
-
-        Today, I pray that your life is filled with happiness, love, success, peace, and blessings.
-
-        Never forget how beautiful, special, and important you are. Keep smiling, keep shining, and never stop being the wonderful person you are.
-
-        You deserve all the beautiful things this world has to offer.
-
-        I love and appreciate you so much, bestie! 😊💕
-    </p>
 
     <h2>:🎁 A Special Birthday Surprise</h2>
 
@@ -138,6 +256,21 @@ footer{
                 surprise.style.display = "block";
             }
         }
+
+        
+    function openLetter() {
+        const envelope = document.getElementById("envelope");
+        const button = document.getElementById("openButton");
+
+        envelope.classList.toggle("open");
+
+        if (envelope.classList.contains("open")) {
+            button.textContent = "Close Your Letter 💗";
+        } else {
+            button.textContent = "Open Your Letter 💌";
+        }
+    }
+
     </script>
 </body>
 </html>
