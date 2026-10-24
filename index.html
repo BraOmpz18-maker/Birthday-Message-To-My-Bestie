@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bestie ❤</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffe4ef, #fff0f5, #ffd6e7);
+    color: #8b2454;
+}
+
+.container{
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px #d98aaa55;
+}
+
+h1{
+    color: #e84393;
+    font-size: 38px;
+}
+
+h2{
+    color: #d63384;
+}
+
+.cake{
+    font-size: 75px;
+    animation: bounce 2s infinite;
+}
+
+.message{
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+button{
+    background: #e84393;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#surprise{
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    background: #fff0f6;
+    border-radius: 15px;
+    line-height: 1.8;
+}
+
+.heart{
+    font-size: 25px;
+    animation: float 3s infinite ease-in-out; 
+}
+
+footer{
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+@keyframes bounce{
+    0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); }
+}
+</style>
+<body>
+    <div class="container">
+        <div class="heart">❤ 💞 💖</div>
+        <div class="cake">🎂</div>
+
+        <h1>Happy Birthday Bonolo! 🎉</h1>
+
+    <h2>To My Beautiful Best Friend 🌸</h2>
+
+    <p class="message">Happy Birthday to the most amazing girl! ❤
+        
+        I just want you to know to know how grateful I am to have to have you in my life.
+        
+        You are more than a best friend to me. You are someone who makes life  brighter, happier, and more beautiful.
+
+        Thank you for the laughs, the memories, the conversations, and all the moments that make our friendship so special.
+
+        Today, I pray that your life is filled with happiness, love, success, peace, and blessings.
+
+        Never forget how beautiful, special, and important you are. Keep smiling, keep shining, and never stop being the wonderful person you are.
+
+        You deserve all the beautiful things this world has to offer.
+
+        I love and appreciate you so much, bestie! 😊💕
+    </p>
+
+    <h2>:🎁 A Special Birthday Surprise</h2>
+
+    <p>Click the button below for another message! 💌</p>
+
+    <button onclick="showSurprise()">Open Your Surprise 💝</button>
+
+    <div id="surprise">
+        <h2>My Birthday Wish For You 🌷</h2>
+
+        <p>May this new chapter bring you endless reasons to smile, beautiful memories, genuine friendships, and dreams that come true.
+
+            May you always know your worth and never settle for anything less than the love and happiness you deserve.
+
+            No matter where life takes us, I hope our friendship continues to grow stronger.
+
+            You are a blessing, bestie, and I hope your birthday is as beautiful as your heart.
+
+            <br>
+            <strong>Happy birthday, my favourite girl! ❤🎂 Love you always! ❤</strong>
+        </p>
+    </div>
+
+    <footer>Made with love, just for you 💕<br>Best friends today, tomorrow, and always! </footer>
+    
+    </div>
+    
+    <script>
+        function showSurprise(){
+            const surprise = document.getElementById("surprise");
+            if (surprise.style.display === "block") {
+                surprise.style.display = "none";
+            } else {
+                surprise.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
